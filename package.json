@@ -1,0 +1,16 @@
+{
+  "name": "drp-tscourse",
+  "version": "1.0.0",
+  "description": "Platzi course done by Derick Robinson",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "typescript",
+    "javascript",
+    "platzi"
+  ],
+  "author": "Derick Robinson",
+  "license": "ISC"
+}
