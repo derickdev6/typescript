@@ -37,3 +37,23 @@ let makePic = (title:string, date:string, size:SquareSize = '100x100'):object =>
 
 const pic = makePic('New', 'yesterday');
 console.log(pic);
+
+//
+
+function handleError(code:number, message:string): string|never{
+    if(message ==='error'){
+    throw new Error(`Error-> ${message}:${code}`)
+    }
+    else{
+        return 'An error has ocurred'
+    }
+}
+
+try {
+    let result = handleError(200, 'OK');
+    console.log(result);
+    result = handleError(404, 'error');
+    console.log(result);
+} catch (error) {
+    
+}

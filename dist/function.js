@@ -27,3 +27,20 @@ let makePic = (title, date, size = '100x100') => {
 };
 const pic = makePic('New', 'yesterday');
 console.log(pic);
+//
+function handleError(code, message) {
+    if (message === 'error') {
+        throw new Error(`Error-> ${message}:${code}`);
+    }
+    else {
+        return 'An error has ocurred';
+    }
+}
+try {
+    let result = handleError(200, 'OK');
+    console.log(result);
+    result = handleError(404, 'error');
+    console.log(result);
+}
+catch (error) {
+}
