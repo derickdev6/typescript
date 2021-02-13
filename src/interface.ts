@@ -5,7 +5,8 @@ enum PhotoOrientation {
     Landscape,
     Portrait,
     Sqaure,
-    Panorama
+    Panorama,
+    None
 }
 
 interface Picture{
@@ -29,11 +30,55 @@ let another:Picture={
     date:'Tomorrow',
     orientation: PhotoOrientation.Sqaure
 }
-showPicture(mypic);
-showPicture(another);
-showPicture({
-    title: 'Hey',
-    date: 'Yesterday',
-    orientation: PhotoOrientation.Portrait,
-    // no se permiten extras
-});
+// showPicture(mypic);
+// showPicture(another);
+// showPicture({
+//     title: 'Hey',
+//     date: 'Yesterday',
+//     orientation: PhotoOrientation.Portrait,
+//     // no se permiten extras
+// });
+
+interface PictureConfig{
+    title?: string;
+    date?: string;
+    orientation?: PhotoOrientation;
+}
+
+function generatePicture(config: PictureConfig){
+    const pic = {title: 'Default', date: 'none', orientation: PhotoOrientation.None};
+    if (config.title){
+        pic.title = config.title;
+    }
+    if (config.date){
+        pic.date = config.date;
+    }
+    if (config.orientation){
+        pic.orientation = config.orientation;
+    }
+    return pic;
+}
+
+let mypic2 = generatePicture({});
+// console.log(mypic2);
+// mypic2 = generatePicture({title: 'Travel pic'});
+// console.log(mypic2);
+// mypic2 = generatePicture({date: '10/09/2001', orientation: PhotoOrientation.Landscape});
+// console.log(mypic2);
+
+//Interfaz : Usuario
+
+interface User{
+    readonly id: number;
+    username: string;
+    isPro: boolean;
+}
+let user:User;
+user = {id: 100, username: "Derick", isPro: true};
+console.log(user);
+
+user.username = 'LLOOLOL';
+console.log(user);
+//No permite cambiar valor de id por el readonly
+// user.id = 123;
+// console.log(user);
