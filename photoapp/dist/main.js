@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const photoapp_1 = require("./photoapp");
+const user = new photoapp_1.User(1, 'Derick', false);
+const myalbum = new photoapp_1.Album(1);
+const mypic1 = new photoapp_1.Picture(1, 'Firstpic');
+const mypic2 = new photoapp_1.Picture(2, undefined, photoapp_1.Picture.Orientations.Portrait);
+const mypic3 = new photoapp_1.Picture(3, 'Thirdpic', photoapp_1.Picture.Orientations.Landscape);
+myalbum.addPicture(mypic1);
+myalbum.addPicture(mypic2);
+myalbum.addPicture(mypic3);
+user.addAlbum(myalbum);
+user.FirstName = 'John';
+//console.log(user);
+console.log(user.Albums[0]);

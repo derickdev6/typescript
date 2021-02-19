@@ -1,0 +1,14 @@
+"use strict";
+exports.__esModule = true;
+var photoapp_1 = require("./photoapp");
+var user = new photoapp_1.User(1, 'Derick', false);
+var myalbum = new photoapp_1.Album(1);
+var mypic1 = new photoapp_1.Picture(1, 'Firstpic');
+var mypic2 = new photoapp_1.Picture(2, undefined, photoapp_1.Picture.Orientations.Portrait);
+var mypic3 = new photoapp_1.Picture(3, 'Thirdpic', photoapp_1.Picture.Orientations.Landscape);
+myalbum.addPicture(mypic1);
+myalbum.addPicture(mypic2);
+myalbum.addPicture(mypic3);
+user.addAlbum(myalbum);
+user.FirstName = 'John';
+console.log(user);
