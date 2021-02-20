@@ -1,4 +1,6 @@
-import { Album, Picture, User } from "./photoapp";
+import { User } from "./User";
+import { Album } from "./Album";
+import { Picture } from "./Picture";
 
 const user = new User(1, 'Derick', false);
 const myalbum = new Album(1);
@@ -14,3 +16,6 @@ user.addAlbum(myalbum);
 user.FirstName = 'John';
 console.log(user);
 // console.log(user.Albums[0]);
+user.removeAlbum(myalbum);
+
+console.log(user);
